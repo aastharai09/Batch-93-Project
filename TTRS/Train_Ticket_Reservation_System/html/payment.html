@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body{
+background-image:white;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size:cover;
+}
+
+.signup{
+text-align:center;
+margin-top:10%;
+background-color:grey;
+margin-left:13%;
+margin-right:13%;
+opacity:0.7;
+border-radius: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  font-weight:bolder;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+  margin-top:-86px;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.header{
+display:flex;
+background-color:white;
+height:60px;
+border-radius: 15px;
+opacity:0.7;
+}
+
+.div1{
+width:23%;
+align:center;
+margin:auto;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+span.price {
+  float: right;
+  color: black;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<section class="header">
+
+<div class="div1"><h2 style="font-size:30px; color:black;"> PAYMENT GATEWAY</h2></div>
+</div>
+</section>
+
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <div class="signup" style="font-weight:bold;">
+            <form action="Succes.html">
+
+                <div class="row">
+                    <div class="col-50" style="font-weight:bold;">
+                        <h3>Payment Details</h3>
+                        <label for="fname"><i class="fa fa-user" ></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="ABC" required>
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="abc@gmail.com" required>
+
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Abc" required>
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="37424545540*****" required>
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="JUNE" required>
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="expyear">Exp Year</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="2026" required>
+                            </div>
+                            <div class="col-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="081" required>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <a href="ending.html">Continue to confirm</a> -->
+                <a class="btn" id="form-button" href="ticket.html" role="button" >Back</a>
+                <input type="submit" value="Continue to confirm" class="btn" onclick="book_ticket()"> 
+             
+
+            </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="js/ticket.js"></script>
+
+</body>
+</html>

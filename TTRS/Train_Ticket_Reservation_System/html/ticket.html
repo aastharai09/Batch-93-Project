@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    
+</head>
+<style>
+
+/* Navigation bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* logo of navigation bar */
+#logo{
+    margin: -18px 7px;
+}
+
+#logo img{
+    height: 40px;
+    margin: 23px 20px;
+}
+
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li{
+   list-style: none;                    /* dot to home got omited */
+  font-size: 1rem;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:-4px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+#navbar ul li a{
+    color: white;
+   display: block;
+   padding: 10px 15px;
+   text-decoration: none;                /* underline of home got omited */
+   border-radius: 30px;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+.item1{
+    position: absolute;
+    right: 250px; 
+    /* padding: 10px 20px; */
+}
+
+/* if both have same class name item1 their is other method to shift button to right
+.item1 {
+    position: relative;
+    right: -537px;} */
+
+.item2{
+    position: absolute;
+    right: 160px; 
+
+}
+
+.item3{
+    position: absolute;
+    right: 20px;
+    margin-top: -22px;
+    background-color: rgb(9, 10, 9); 
+    border-radius: 30px;
+}
+
+.item4{
+    position: absolute;
+    right: 875px;
+    background-color: rgb(93, 90, 95); 
+    border-radius: 30px;
+}
+.item5{
+    position: absolute;
+    right: 725px;
+    background-color: rgb(93, 90, 95); 
+    border-radius: 30px;
+}
+
+.sub-menu2{
+    display :none;
+}
+
+#navbar ul li:hover .sub-menu2{
+    display: block;
+    position: absolute;
+    border-radius: 20px;
+    background-color: rgb(93, 90, 95);
+    margin-top: 1px;
+    margin-left: -10px;
+    left: 10px;
+}
+
+#navbar ul li:hover .sub-menu2 ul{
+    display: block;
+    margin: 10px;
+}
+
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('train.png') no-repeat center center/cover;
+    height: 850px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.5;
+}
+
+     .inputt{
+        /* height: 700px;
+        width: 1200px; */
+        /* border: 1px solid rgb(245, 234, 234); */
+       margin: auto;
+        margin-top: 30px;
+        /* background-color:#161626;
+        border-radius: 20px;
+        box-shadow: 5px 10px 23px; */
+    } 
+    
+    .inp{
+    height: 18px;
+    width: 308px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.inp:hover{
+    height: 18px;
+    width: 308px;
+    /* height: 23px;
+    width: 200px; */
+    border-radius: 10px;
+    padding: 10px;
+    border: 4px solid black;
+}
+
+.form-button{
+    border: 2px solid #a19998;
+    background-color: black;
+    text-align: center;
+    border-radius: 10px;
+    height: 30px;
+    width: 140px;
+    color: rgb(247, 238, 238);
+    padding: 1px;
+}
+
+.form-button:hover{
+    background-color: rgb(177, 7, 7);
+    border-radius: 10px;
+    height: 30px;
+    width: 140px;
+    font-weight: bold;
+    color: rgb(250, 246, 246);
+}
+
+
+</style>
+<section id="home">
+    <nav id="navbar">
+        <div id="logo">
+            <img src="rail_logo.png" alt="Indian Railways" href="home.html">
+        </div> 
+        <ul>
+            <!-- <li class="item"><a href="home.html">Home</a></li>
+           -->
+            <li class="item3"><a href="login.html">Logout</a></li> 
+           
+            </li>
+            <!-- <li class="item5"><a href="">Ticket Options</a>
+                <div class="sub-menu2">
+                <ul>
+                    <li class="item55"><a href="">Ticket Details</a></li>
+                    <li class="item55"><a href="">Download Ticket </a></li>
+                </ul>
+            </div>
+            </li>-->
+
+        </ul>
+    </nav>
+
+<body align="center">
+   
+<section class="inputt">
+    <div align="center" class="form">
+                <br>
+                <input type="number"  class="inp" id="tr_no" placeholder="Enter train number"><br>
+                <input type="date" class="inp" id="da_te"><br><br>
+                <input id="btn" class="form-button"  type="submit" value="continue" onclick="get_train()"/><br>
+    </div> 
+     
+    <br>
+    <div class="form" align="right">
+        <div id="trdata">
+         </div>
+        </div>
+
+    
+
+<br>
+    <div align="center" class="form2">
+        
+                <!-- <td align="center">Number of Passenger</td> -->
+                <input type="number"  class="inp"  id="pa_no"  placeholder="Enter Number of Passenger"><br>
+                <input type="text"  class="inp"  id="pa_na" placeholder="Name"/><br>
+                <input type="text"  class="inp"  id="pa_ag" placeholder="Age"/><br>
+                <input type="text" class="inp"   id="pa_gn" placeholder="Gender"/><br><br>
+                <input type="submit"  class="form-button"  onclick="add_pa()" value="Add" /><br>
+        
+    </div>  
+
+    <br> 
+
+    <div class="form" >
+        <div id="padata">
+         </div>
+         
+         <input id="btn" type="submit" class="form-button" value="Book Ticket" onclick="book_ticket()" />
+         <input id="btn2" type="submit" class="form-button" value="Download Ticket" onclick="download_ticket()" /> -->
+        </div>
+
+        <br> 
+
+    <div class="form" >
+       
+        <div id="tcdata">
+         </div>
+         <!-- <input id="btn" type="submit" class="form-button" value="Download Ticket" onclick="download_ticket()" /> -->
+         <a href="payment.html"  >PAYMENT</a>
+        </div>
+    </section>
+
+
+
+    <!-- <div align="right" >
+        <input id="btn" type="submit" value="Log Out" onclick="location.href='index.html'">
+    </div> -->
+</section>
+</body>
+<script src="/js/ticket.js"></script>
+</html>
